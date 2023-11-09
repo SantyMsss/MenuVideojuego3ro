@@ -23,7 +23,7 @@ import javax.swing.JOptionPane;
 public class Configuraciones extends JFrame {
 
     JLabel jlTitulo;
-    JButton jbVolver, jbConfig1, jbConfig2, jbConfig3; // Agrega más botones según tus necesidades
+    JButton jbVolver, jbConfig1, jbConfig2, jbConfig3, JButton; // Agrega más botones según tus necesidades
     ProyectoIntegrador Pi;
 
     public Configuraciones(ProyectoIntegrador obj) {
@@ -96,7 +96,7 @@ public class Configuraciones extends JFrame {
         add(jbConfig3);
 
         jbVolver = new JButton("VOLVER AL MENÚ");
-        jbVolver.setBounds(270, 600, 150, 30);
+        jbVolver.setBounds(250,370, 200, 30);
         jbVolver.setBackground(Color.BLACK);
         jbVolver.setForeground(Color.WHITE);
         jbVolver.setBorder(new LineBorder(Color.WHITE));
@@ -112,6 +112,7 @@ public class Configuraciones extends JFrame {
 
     public void evento_jbVolver() {
         setVisible(false);
+        dispose();
         Pi.setVisible(true); // Mostrar la ventana principal
     }
 
@@ -127,4 +128,8 @@ public class Configuraciones extends JFrame {
     public void evento_Config3() {
         JOptionPane.showMessageDialog(this, "Configuración 3 seleccionada");
     }
+
+
+
+    
 }

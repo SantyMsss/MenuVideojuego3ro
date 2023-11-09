@@ -79,7 +79,7 @@ public class Finalidad extends JFrame {
         jlIn.setBorder(new LineBorder(Color.BLACK));
         add(jlIn);
 
-      /*
+      
         JButton jbAbrir_Cap = new JButton("Informacion Extra");
         jbAbrir_Cap.setBounds(35, 300, 150, 30);
         jbAbrir_Cap.setBackground(Color.BLACK);
@@ -98,18 +98,26 @@ public class Finalidad extends JFrame {
 
     }
 
-    EVENTO PARA ANADIR MAS INFORMACION DEL OBJETIVO DEL JUEGO
+
+
+    //EVENTO PARA ANADIR MAS INFORMACION DEL OBJETIVO DEL JUEGO
     
     public void evento_jbAbrir_Cap() {
-        Cap_Game obj = new Cap_Game(this);
+    //  Fisica2 obj = new Fisica2(this);
         setVisible(false);
 
-    }
-*/
-    }
+    } 
+    
+
+    
     public void evento_jbVolver() {
         setVisible(false);
         dispose();
         Pi.setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        ProyectoIntegrador obj = new ProyectoIntegrador();
+        Finalidad obj2 = new Finalidad(obj);
     }
 }

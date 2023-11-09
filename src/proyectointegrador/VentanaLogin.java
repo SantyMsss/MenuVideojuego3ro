@@ -142,8 +142,8 @@ public class VentanaLogin extends JFrame{
         }else{
             if ((login.equals("LeoMessi007") && 
                     pass.equals("12345")) || 
-                 (login.equals("enfermera") && 
-                    pass.equals("54321"))) {
+                 (login.equals("1") && 
+                    pass.equals("1"))) {
                 //System.out.println("Correcto");
                 
                 ProyectoIntegrador mp = new ProyectoIntegrador();
