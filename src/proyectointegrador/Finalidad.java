@@ -16,7 +16,7 @@ import javax.swing.border.LineBorder;
 
 public class Finalidad extends JFrame {
 
-    JButton jbVolver, jbAbrir_Cap;
+    JButton jbVolver, jbAbrir_Cap, jbAbrir_Cal;
     ProyectoIntegrador Pi;
     JLabel jlTi, jlIn, jlSel;
 
@@ -96,6 +96,23 @@ public class Finalidad extends JFrame {
 
         add(jbAbrir_Cap);
 
+        JButton jbAbrir_Cal = new JButton("Integracion Mate 3");
+        jbAbrir_Cal.setBounds(190, 300, 150, 30);
+        jbAbrir_Cal.setBackground(Color.BLACK);
+        jbAbrir_Cal.setForeground(Color.WHITE);
+        jbAbrir_Cal.setBorder(new LineBorder(Color.WHITE));
+        jbAbrir_Cal.setFont(new Font("Tahoma", Font.BOLD | Font.PLAIN, 12));
+        jbAbrir_Cal.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                evento_jbAbrir_Cal();
+            }
+        });
+
+        add(jbAbrir_Cal);
+
+
     }
 
 
@@ -105,6 +122,36 @@ public class Finalidad extends JFrame {
     public void evento_jbAbrir_Cap() {
     //  Fisica2 obj = new Fisica2(this);
         setVisible(false);
+
+    } 
+
+
+
+     public void evento_jbAbrir_Cal() {
+
+
+      
+
+        PruebaMaclaurin cl = new PruebaMaclaurin();
+
+          String mensaje = "¡Bienvenido a la Calculadora de Aproximaciones de Maclaurin!\n\n"
+        + "Manual de Usuario:\n\n"
+        + "En el siguiente menú, podrás seleccionar la función para conocer su aproximación mediante la serie de Maclaurin.\n"
+        + "Se utiliza n = 10 en todas las aproximaciones.\n\n"
+        + "1. Función Seno:\n"
+        + "   - Ingresa el valor de x (en grados). Rango permitido: 0 - 360.\n\n"
+        + "2. Función Coseno:\n"
+        + "   - Ingresa el valor de x (en grados). Rango permitido: 0 - 360.\n\n"
+        + "3. Función Euler (e^x):\n"
+        + "   - Ingresa cualquier valor de x.\n\n"
+        + "Presiona 'Cancelar' para salir de la aplicación.\n\n";
+        cl.Calculadora();
+        setVisible(false);
+    
+
+
+
+
 
     } 
     

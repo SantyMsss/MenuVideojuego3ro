@@ -45,7 +45,7 @@ public class Scorer extends JFrame {
         String[][] data = {
 
 
-                { "JonnyCarl90", "10"},
+                { "JonnyCarl90", "650"},
                 { "BidenURRS", "100" },
                 { "GoldenJazz2005", "400" },
                 { "MrBeastOMG", "200" },
