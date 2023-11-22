@@ -28,7 +28,8 @@ public class PruebaMaclaurin {
         int funcion = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la función a aproximar:\n"
                 + "1. Seno\n"
                 + "2. Coseno\n"
-                + "3. Euler\n"));
+                + "3. Euler\n"
+                + "4. Ln\n"));
                 
         // Ingresar el valor de x
         
@@ -43,10 +44,10 @@ public class PruebaMaclaurin {
             case 2:
                 resultado = Coseno(x);
                 break;
-           /* case 4:
+           case 4:
                 resultado = Ln(x);
                 break;
-            */
+            
             case 3:
                 resultado = Exponencial(x);
                 break;
@@ -99,7 +100,7 @@ public class PruebaMaclaurin {
         
 
         double aproximacion = 0.0;
-        for (int n = 0; n < 10; n++) {
+        for (int n = 0; n < 20; n++) {
             aproximacion += Math.pow(-1, n) * Math.pow(x, 2 * n + 1) / factorial(2 * n + 1);
         }
         return aproximacion;

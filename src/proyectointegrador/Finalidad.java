@@ -133,18 +133,6 @@ public class Finalidad extends JFrame {
       
 
         PruebaMaclaurin cl = new PruebaMaclaurin();
-
-          String mensaje = "¡Bienvenido a la Calculadora de Aproximaciones de Maclaurin!\n\n"
-        + "Manual de Usuario:\n\n"
-        + "En el siguiente menú, podrás seleccionar la función para conocer su aproximación mediante la serie de Maclaurin.\n"
-        + "Se utiliza n = 10 en todas las aproximaciones.\n\n"
-        + "1. Función Seno:\n"
-        + "   - Ingresa el valor de x (en grados). Rango permitido: 0 - 360.\n\n"
-        + "2. Función Coseno:\n"
-        + "   - Ingresa el valor de x (en grados). Rango permitido: 0 - 360.\n\n"
-        + "3. Función Euler (e^x):\n"
-        + "   - Ingresa cualquier valor de x.\n\n"
-        + "Presiona 'Cancelar' para salir de la aplicación.\n\n";
         cl.Calculadora();
         setVisible(false);
     
