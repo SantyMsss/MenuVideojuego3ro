@@ -24,43 +24,52 @@ public class PruebaMaclaurin {
 
 
         // Seleccionar la función a aproximar   
-        do{
-        int funcion = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la función a aproximar:\n"
-                + "1. Seno\n"
-                + "2. Coseno\n"
-                + "3. Euler\n"
-                + "4. Ln\n"));
-                
-        // Ingresar el valor de x
-        
-        double x = Double.parseDouble(JOptionPane.showInputDialog("Ingrese el valor de x:"));
-        double resultado = 0.0;
+        boolean continuar = true;
+        do {
+            int funcion = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la función a aproximar:\n"
+                    + "1. Seno\n"
+                    + "2. Coseno\n"
+                    + "3. Euler\n"
+                    + "4. Ln\n"));
 
-        // Calcular la aproximación
-        switch (funcion) {
-            case 1:
-                resultado = Seno(x);
-                break;
-            case 2:
-                resultado = Coseno(x);
-                break;
-           case 4:
-                resultado = Ln(x);
-                break;
-            
-            case 3:
-                resultado = Exponencial(x);
-                break;
-            default:
-                JOptionPane.showMessageDialog(null, "Error: Opción inválida.");
-                System.exit(1);
-        }
+            // Ingresar el valor de x
+            double x = Double.parseDouble(JOptionPane.showInputDialog("Ingrese el valor de x:"));
+            double resultado = 0.0;
 
-        
-        JOptionPane.showMessageDialog(null, "El resultado es de la aproximacion es: " + resultado);
-    }while(JOptionPane.showConfirmDialog(null, "¿Desea realizar otra operación?")==0);
+            // Calcular la aproximación
+            switch (funcion) {
+                case 1:
+                    resultado = Seno(x);
+                    break;
+                case 2:
+                    resultado = Coseno(x);
+                    break;
+                case 4:
+                    resultado = Ln(x);
+                    break;
+
+                case 3:
+                    resultado = Exponencial(x);
+                    break;
+                default:
+                    JOptionPane.showMessageDialog(null, "Error: Opción inválida.");
+                    System.exit(1);
+            }
+
+            JOptionPane.showMessageDialog(null, "El resultado es de la aproximacion es: " + resultado);
+
+            // Pregunta si desea realizar otra operación
+            int option = JOptionPane.showConfirmDialog(null, "¿Desea realizar otra operación?", "Confirmación", JOptionPane.YES_NO_OPTION);
+            if (option != JOptionPane.YES_OPTION) {
+                continuar = false;
+            }
+
+        } while (continuar);
+
+        // Regresa al menú principal (Finalidad)
+        Finalidad menuPrincipal = new Finalidad(new ProyectoIntegrador());
+        menuPrincipal.setVisible(false);
     }
-
     // INICIO DE FUNCIONES MATEMÁTICAS
 
 
@@ -131,6 +140,8 @@ public class PruebaMaclaurin {
         }
         return result;
     }
+
+
 
 
 

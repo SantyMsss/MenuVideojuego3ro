@@ -13,10 +13,24 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
 import javax.swing.border.LineBorder;
+import java.awt.Desktop;
+import java.io.File;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.io.File;
+import java.io.IOException;
+import java.net.URL;
+
+import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileNameExtensionFilter;
+
 
 public class Finalidad extends JFrame {
 
-    JButton jbVolver, jbAbrir_Cap, jbAbrir_Cal;
+    JButton jbVolver, jbAbrir_Cap, jbAbrir_Cal, jbAbrir_Pro;
     ProyectoIntegrador Pi;
     JLabel jlTi, jlIn, jlSel;
 
@@ -79,9 +93,25 @@ public class Finalidad extends JFrame {
         jlIn.setBorder(new LineBorder(Color.BLACK));
         add(jlIn);
 
+        JButton jbAbrir_Pro = new JButton("Propuesta Reciclar");
+        jbAbrir_Pro.setBounds(35, 300, 125, 30);
+        jbAbrir_Pro.setBackground(Color.BLACK);
+        jbAbrir_Pro.setForeground(Color.WHITE);
+        jbAbrir_Pro.setBorder(new LineBorder(Color.WHITE));
+        jbAbrir_Pro.setFont(new Font("Tahoma", Font.BOLD | Font.PLAIN, 12));
+        jbAbrir_Pro.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                evento_jbAbrir_Pro();
+            }
+        });
+
+        add(jbAbrir_Pro);
+
       
-        JButton jbAbrir_Cap = new JButton("Informacion Extra");
-        jbAbrir_Cap.setBounds(35, 300, 150, 30);
+        JButton jbAbrir_Cap = new JButton("Contaminacion Electromagnetica");
+        jbAbrir_Cap.setBounds(35, 330, 250, 30);
         jbAbrir_Cap.setBackground(Color.BLACK);
         jbAbrir_Cap.setForeground(Color.WHITE);
         jbAbrir_Cap.setBorder(new LineBorder(Color.WHITE));
@@ -96,8 +126,8 @@ public class Finalidad extends JFrame {
 
         add(jbAbrir_Cap);
 
-        JButton jbAbrir_Cal = new JButton("Integracion Mate 3");
-        jbAbrir_Cal.setBounds(190, 300, 150, 30);
+        JButton jbAbrir_Cal = new JButton("Matematicas III");
+        jbAbrir_Cal.setBounds(160, 300, 125, 30);
         jbAbrir_Cal.setBackground(Color.BLACK);
         jbAbrir_Cal.setForeground(Color.WHITE);
         jbAbrir_Cal.setBorder(new LineBorder(Color.WHITE));
@@ -116,32 +146,66 @@ public class Finalidad extends JFrame {
     }
 
 
-
-    //EVENTO PARA ANADIR MAS INFORMACION DEL OBJETIVO DEL JUEGO
     
     public void evento_jbAbrir_Cap() {
-    //  Fisica2 obj = new Fisica2(this);
-        setVisible(false);
+    // Ruta del directorio donde se encuentra la carpeta 'pdf' dentro del proyecto
+    String pdfDirectoryPath = System.getProperty("user.dir") + File.separator + "src" + File.separator + "pdf";
 
-    } 
+    // Nombre del PDF a abrir
+    String pdfFileName = "ContElectromagnetica.pdf";
+
+    // Ruta completa del PDF
+    String pdfPath = pdfDirectoryPath + File.separator + pdfFileName;
+
+    // Abre el PDF en el navegador predeterminado
+    try {
+        // Convierte la ruta del archivo en una URL
+        URL pdfUrl = new File(pdfPath).toURI().toURL();
+        // Abre la URL en el navegador predeterminado
+        Desktop.getDesktop().browse(pdfUrl.toURI());
+    } catch (IOException | URISyntaxException e) {
+        e.printStackTrace();
+    }
+
+
+    setVisible(false);
+}
 
 
 
      public void evento_jbAbrir_Cal() {
-
-
-      
-
         PruebaMaclaurin cl = new PruebaMaclaurin();
         cl.Calculadora();
         setVisible(false);
-    
-
-
-
-
-
     } 
+
+    public void evento_jbAbrir_Pro(){
+
+        // Ruta del directorio donde se encuentra la carpeta 'pdf' dentro del proyecto
+    String pdfDirectoryPath = System.getProperty("user.dir") + File.separator + "src" + File.separator + "pdf";
+
+    // Nombre del PDF a abrir
+    String pdfFileName = "PROPUESTA PROYECTO RECICLAJE DE SISTEMAS DE INFORMACION.pdf";
+
+    // Ruta completa del PDF
+    String pdfPath = pdfDirectoryPath + File.separator + pdfFileName;
+
+    // Abre el PDF en el navegador predeterminado
+    try {
+        // Convierte la ruta del archivo en una URL
+        URL pdfUrl = new File(pdfPath).toURI().toURL();
+        // Abre la URL en el navegador predeterminado
+        Desktop.getDesktop().browse(pdfUrl.toURI());
+    } catch (IOException | URISyntaxException e) {
+        e.printStackTrace();
+    }
+
+
+    setVisible(false);
+
+
+
+    }
     
 
     
